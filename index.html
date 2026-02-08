@@ -3,49 +3,83 @@ index.html
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Pregunta importante 😝</title>
+  <title>Pregunta peligrosa 😈</title>
   <style>
     body {
-      background: #fff0f5;
+      background-color: #fff0f5;
       font-family: Arial, sans-serif;
       text-align: center;
-      margin-top: 80px;
+      height: 100vh;
+      margin: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
+
     h1 {
-      font-size: 36px;
+      font-size: 38px;
+      margin-bottom: 40px;
     }
-    p {
-      font-size: 22px;
-    }
+
     button {
-      font-size: 20px;
-      padding: 12px 20px;
-      margin: 15px;
+      font-size: 22px;
+      padding: 12px 30px;
       border: none;
-      border-radius: 10px;
+      border-radius: 12px;
       cursor: pointer;
-      background-color: #ff69b4;
+      margin: 10px;
+    }
+
+    #si {
+      background-color: #ff4d4d;
       color: white;
     }
-    button:hover {
-      background-color: #ff1493;
+
+    #no {
+      background-color: #bdbdbd;
+      position: absolute;
     }
   </style>
 </head>
 <body>
 
-<h1>💘 ¿Me quieres? 💘</h1>
-<p>Entonces dime qué me vas a comprar 😌</p>
+  <h1>😈 ¿Quieres que te madree?</h1>
 
-<button onclick="respuesta('🍔 Hamburguesa')">🍔 Hamburguesa</button>
-<button onclick="respuesta('🍓 Fresas con crema')">🍓 Fresas con crema</button>
-<button onclick="respuesta('🌮 Tacos')">🌮 Tacos</button>
+  <button id="si">Sí</button>
+  <button id="no">No</button>
 
-<script>
-  function respuesta(comida) {
-    alert("Sabía que me querías 🤗\nEntonces me compras: " + comida);
-  }
-</script>
+  <!-- Sonidos -->
+  <audio id="sonidoNo" src="https://www.soundjay.com/buttons/sounds/button-10.mp3"></audio>
+  <audio id="sonidoSi" src="https://www.soundjay.com/buttons/sounds/button-4.mp3"></audio>
+
+  <script>
+    const botonNo = document.getElementById("no");
+    const botonSi = document.getElementById("si");
+    const sonidoNo = document.getElementById("sonidoNo");
+    const sonidoSi = document.getElementById("sonidoSi");
+
+    botonNo.addEventListener("mouseover", moverBoton);
+    botonNo.addEventListener("touchstart", moverBoton);
+
+    function moverBoton() {
+      sonidoNo.currentTime = 0;
+      sonidoNo.play();
+
+      const x = Math.random() * (window.innerWidth - 120);
+      const y = Math.random() * (window.innerHeight - 60);
+
+      botonNo.style.left = x + "px";
+      botonNo.style.top = y + "px";
+    }
+
+    botonSi.addEventListener("click", () => {
+      sonidoSi.play();
+      alert("😏 Sabía que dirías que sí");
+    });
+  </script>
 
 </body>
 </html>
+
