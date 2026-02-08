@@ -1,0 +1,51 @@
+index.html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Pregunta importante 😝</title>
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 80px;
+    }
+    h1 {
+      font-size: 36px;
+    }
+    p {
+      font-size: 22px;
+    }
+    button {
+      font-size: 20px;
+      padding: 12px 20px;
+      margin: 15px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      background-color: #ff69b4;
+      color: white;
+    }
+    button:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+
+<h1>💘 ¿Me quieres? 💘</h1>
+<p>Entonces dime qué me vas a comprar 😌</p>
+
+<button onclick="respuesta('🍔 Hamburguesa')">🍔 Hamburguesa</button>
+<button onclick="respuesta('🍓 Fresas con crema')">🍓 Fresas con crema</button>
+<button onclick="respuesta('🌮 Tacos')">🌮 Tacos</button>
+
+<script>
+  function respuesta(comida) {
+    alert("Sabía que me querías 🤗\nEntonces me compras: " + comida);
+  }
+</script>
+
+</body>
+</html>
